@@ -1,0 +1,64 @@
+using System; 
+
+class URI {
+
+    static void Main(string[] args) { 
+
+int Bonus, T;
+
+Pomekon D_Pok = new Pomekon();
+Pomekon G_Pok = new Pomekon();
+
+T = int.Parse(Console.ReadLine());
+
+for (int i = 0; i < T; i++) {
+
+//    Console.Write("Informe a quantidade de bonus: ");
+    Bonus = int.Parse(Console.ReadLine());
+
+    // dando os valores pros pokemons dos treinadores:
+    D_Pok.SetValores();
+    G_Pok.SetValores();
+
+    D_Pok.Ataque = CalcularGolpe(D_Pok.Ataque, D_Pok.Defesa, D_Pok.Level, Bonus);
+    G_Pok.Ataque = CalcularGolpe(G_Pok.Ataque, G_Pok.Defesa, G_Pok.Level, Bonus);
+
+
+
+    // LUTA:
+    if (D_Pok.Ataque == G_Pok.Ataque)
+       Console.WriteLine("Empate");
+
+    else if(D_Pok.Ataque > G_Pok.Ataque)
+      Console.WriteLine("Dabriel");
+    else
+        Console.WriteLine("Guarte");
+}
+
+}
+
+static int CalcularGolpe(int ataque, int defesa, int nivel, int bonus)
+{
+    int golpe = (ataque + defesa) / 2;
+
+    if (nivel%2 == 0)
+       golpe += bonus;
+
+    return golpe;
+}}
+
+
+       public class Pomekon
+       {
+       public int Defesa { get; set; }
+       public int Ataque { get; set; }
+       public int Level { get; set; }
+
+       public void SetValores()
+       {
+               string[] atributos_pok = Console.ReadLine().Split(' ');
+               Ataque = int.Parse(atributos_pok[0]);
+               Defesa = int.Parse(atributos_pok[1]);
+               Level = int.Parse(atributos_pok[2]);
+           }
+   }
