@@ -1,0 +1,28 @@
+using System; 
+
+class URI {
+
+    static void Main(string[] args) { 
+
+double nota = Convert.ToDouble(Console.ReadLine());
+
+
+if (nota == 0)
+{
+    Console.Write("E\n");
+} else if (nota >= 1 && nota <= 35) {
+    Console.Write("D\n");
+}
+else if (nota >= 36 && nota <= 60)
+{
+    Console.Write("C\n");
+}
+else if (nota >= 61 && nota <= 85)
+{
+    Console.Write("B\n");
+} else
+    Console.Write("A\n");
+
+    }
+
+}
