@@ -1,0 +1,1 @@
+Problemas resolvidos do site Beecrowd. Fiz esses exercícios no início da faculdade, enquanto aprendia lógica de programação e os fundamentos da computação. Este repositório é um registro do meu aprendizado e evolução.
