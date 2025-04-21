@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() { 
+
+int N[11][4],n;
+double dist, distM;
+
+
+scanf("%d", &n);
+
+for (int i = 0; i < n; ++i)
+    scanf("%d %d %d", &N[i][0], &N[i][1], &N[i][2]);
+
+for (int i = 0; i < n; ++i)
+{
+    distM = 174;
+
+    for (int j = 0; j < n; ++j)
+    {
+        if (N[i][0] == N[j][0] && N[i][1] == N[j][1] && N[i][2] == N[j][2])
+           continue;
+
+        dist = sqrt( pow(N[i][0] - N[j][0], 2) + pow(N[i][1] - N[j][1], 2) + pow(N[i][2] - N[j][2], 2));
+
+        if (dist != 0 && dist < distM)
+            distM = dist;
+    }
+
+    if (distM <= 20)
+        printf("A\n");
+    else if (distM <= 50)
+        printf("M\n");
+    else
+        printf("B\n");
+}
+
+return 0;
+}
