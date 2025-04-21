@@ -1,0 +1,51 @@
+#include <stdio.h>
+ 
+ int mdc(int a, int b){
+     if(a<0)
+		a = -a;
+	if(b<0)
+		b = -b;
+	if(a%b == 0)
+		return b;
+	else
+		return mdc(b,a%b);
+ }
+ 
+ 
+int main() {
+    
+    int N1,N2,D1,D2,x,y,n,div;
+    char op;
+
+scanf ("%d",&n);
+
+do{
+    scanf ("%d / %d %c %d / %d",&N1,&D1,&op,&N2,&D2);
+ 
+switch (op){
+    case '+':
+    x = (N1*D2 + N2*D1);
+    y = (D1*D2); break;
+     
+    case '-':
+    x = (N1*D2 - N2*D1);
+    y = (D1*D2); break;
+       
+    case '*':
+    x = (N1*N2);
+    y = (D1*D2); break;
+    
+	case '/':
+	x = (N1*D2);
+    y = (N2*D1); 
+		
+	}
+    div = mdc(x,y);
+    
+    printf ("%d/%d = %d/%d\n",x,y,x/div,y/div);
+    
+    n--;
+} while (n>0);
+ 
+    return 0;
+}
